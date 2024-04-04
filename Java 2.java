@@ -12,7 +12,7 @@ public class MaxSumPath {
                 sumX += X[i++];
             } else if (X[i] > Y[j]) {
                 sumY += Y[j++];
-            } else { // When both elements are equal, choose the maximum sum and reset sums
+            } else { 
                 result += Math.max(sumX, sumY) + X[i];
                 sumX = 0;
                 sumY = 0;
@@ -21,17 +21,17 @@ public class MaxSumPath {
             }
         }
         
-        // Add remaining elements of X
+        
         while (i < m) {
             sumX += X[i++];
         }
         
-        // Add remaining elements of Y
+        
         while (j < n) {
             sumY += Y[j++];
         }
         
-        // Choose the maximum sum and add to result
+       
         result += Math.max(sumX, sumY);
         
         return result;
@@ -44,4 +44,5 @@ public class MaxSumPath {
         System.out.println("Maximum sum path is: " + maxSumPath(X, Y));
     }
 }
+
 
